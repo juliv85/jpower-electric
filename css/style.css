@@ -56,8 +56,8 @@ NOTE: This is main stylesheet of template, This file contains the styling for th
 .topbar .topbar-right ul li:last-child { padding-right: 0; }
 .navbar{padding-top: 0; padding-bottom: 0;}
 .navbar-inverse { background: transparent; border: 0; }
-.navbar-brand { height: auto; padding: 25px 0; }
-.navbar .navbar-brand img { height: 40px; }
+.navbar-brand { height: auto; padding: 5px 0; }
+.navbar .navbar-brand img { height: 130px; }
 .navbar { min-height: 80px; }
 .navbar-nav { float: right; }
 .navbar-inverse .navbar-nav>li  { padding: 35px 15px; }
