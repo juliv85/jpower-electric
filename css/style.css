@@ -1068,3 +1068,7 @@ img#logo-footer{ height: 50px; width: auto; }
 /*ADD*/
 .isotope.columns-3 .grid-item {width: 33.33%;padding: 10px;}
 .custom-content {margin-top: -120px;position: relative;z-index: 9;padding: 30px;}
+
+.font-size-25 {
+  font-size: 25px;
+}
