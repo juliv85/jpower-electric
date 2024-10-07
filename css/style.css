@@ -1070,5 +1070,9 @@ img#logo-footer{ height: 50px; width: auto; }
 .custom-content {margin-top: -120px;position: relative;z-index: 9;padding: 30px;}
 
 .font-size-15 {
+  font-size: 18px;
+}
+
+.font-size-15 {
   font-size: 15px;
 }
