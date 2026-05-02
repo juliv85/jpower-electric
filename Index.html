@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JPower Electric — Lighting Up Florida, One Home at a Time</title>
+<meta name="description" content="Florida State Certified electricians serving Florida. Residential, commercial, and industrial electrical services. 24/7 emergency response. 1-year warranty." />
+<link rel="icon" type="image/png" href="assets/jpower-square.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET & BASE ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:'Inter',sans-serif;
+  background:#00072b;
+  color:#F8FCFF;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:#0090c6;color:#000}
+
+/* Custom scrollbar */
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#00072b}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#0090c6,#86ECFF);border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:#0090c6}
+
+/* ============ LANGUAGE TOGGLE ============ */
+[data-lang="en"] .lang-es{display:none!important}
+[data-lang="es"] .lang-en{display:none!important}
+
+/* ============ TYPOGRAPHY ============ */
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-0.02em;line-height:1.1}
+.mono{font-family:'JetBrains Mono',monospace;letter-spacing:0.05em}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;font-weight:500;
+  text-transform:uppercase;letter-spacing:0.2em;
+  color:#0090c6;
+  margin-bottom:20px;
+}
+.eyebrow::before{
+  content:"";width:24px;height:1px;background:#0090c6;
+}
+
+/* ============ LAYOUT ============ */
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+section{padding:120px 0;position:relative}
+@media(max-width:768px){section{padding:80px 0}}
+
+/* ============ NAVIGATION ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  padding:20px 0;
+  transition:all 0.3s ease;
+}
+.nav.scrolled{
+  background:rgba(10,10,10,0.85);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  padding:12px 0;
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;font-size:22px;
+  letter-spacing:-0.03em;
+}
+.logo-bolt{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:42px;height:42px;
+  filter:drop-shadow(0 0 14px rgba(134,236,255,0.55));
+  transition:transform 0.3s ease;
+}
+.logo:hover .logo-bolt{transform:rotate(-8deg) scale(1.08)}
+.logo-bolt img{width:100%;height:100%;object-fit:contain;display:block}
+.logo-text{color:#fff}
+.logo-text span{color:#86ECFF}
+
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{
+  font-size:14px;font-weight:500;
+  color:#d0d0d0;
+  position:relative;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:#0090c6}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:-6px;
+  height:2px;background:#0090c6;
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.3s ease;
+}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+.nav-actions{display:flex;align-items:center;gap:16px}
+.lang-toggle{
+  display:flex;align-items:center;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:99px;padding:4px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;font-weight:500;
+}
+.lang-toggle button{
+  padding:6px 12px;border-radius:99px;
+  color:#888;transition:all 0.2s;
+}
+.lang-toggle button.active{
+  background:#0090c6;color:#00072b;font-weight:600;
+}
+
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;
+  background:linear-gradient(135deg,#0090c6,#86ECFF);
+  color:#00072b;
+  font-weight:700;font-size:14px;
+  border-radius:99px;
+  transition:all 0.3s ease;
+  box-shadow:0 4px 20px rgba(0,144,198,0.4);
+  white-space:nowrap;
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 30px rgba(0,144,198,0.45);
+}
+.btn-primary svg{width:14px;height:14px}
+
+.btn-outline{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;
+  border:1px solid rgba(255,255,255,0.2);
+  color:#fff;font-weight:500;font-size:14px;
+  border-radius:99px;
+  transition:all 0.3s ease;
+  white-space:nowrap;
+}
+.btn-outline:hover{
+  background:rgba(255,255,255,0.05);
+  border-color:#0090c6;color:#0090c6;
+}
+
+.menu-toggle{display:none}
+@media(max-width:900px){
+  .nav-links{display:none;
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;
+    background:rgba(10,10,10,0.95);
+    backdrop-filter:blur(16px);
+    padding:24px;gap:20px;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .nav-links.open{display:flex}
+  .menu-toggle{display:flex;flex-direction:column;gap:5px;padding:8px}
+  .menu-toggle span{width:22px;height:2px;background:#fff;border-radius:2px;transition:0.3s}
+  .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-toggle.open span:nth-child(2){opacity:0}
+  .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-cta-desktop{display:none}
+}
+
+/* ============ HERO ============ */
+.hero{
+  min-height:100vh;
+  padding-top:140px;padding-bottom:80px;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse at 80% 10%,rgba(0,144,198,0.12),transparent 50%),
+    radial-gradient(ellipse at 10% 90%,rgba(134,236,255,0.10),transparent 50%),
+    #00072b;
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%);
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%);
+}
+.hero-bolts{
+  position:absolute;inset:0;z-index:0;
+  pointer-events:none;
+}
+.bolt-decor{
+  position:absolute;color:rgba(0,144,198,0.08);
+  filter:drop-shadow(0 0 20px rgba(0,144,198,0.4));
+}
+.bolt-decor.b1{top:15%;left:8%;width:80px;animation:float 6s ease-in-out infinite}
+.bolt-decor.b2{bottom:20%;right:12%;width:120px;animation:float 8s ease-in-out infinite reverse}
+.bolt-decor.b3{top:50%;right:5%;width:60px;animation:float 5s ease-in-out infinite}
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-20px) rotate(5deg)}
+}
+
+.hero-content{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:center;
+  width:100%;
+}
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;gap:60px}
+}
+
+.hero-status{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 16px;
+  background:rgba(134,236,255,0.08);
+  border:1px solid rgba(134,236,255,0.25);
+  border-radius:99px;
+  font-size:12px;font-family:'JetBrains Mono',monospace;
+  color:#86ECFF;
+  margin-bottom:32px;
+}
+.hero-status .dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#86ECFF;
+  box-shadow:0 0 10px #86ECFF;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.5;transform:scale(1.4)}
+}
+
+.hero h1{
+  font-size:clamp(40px,6.5vw,84px);
+  margin-bottom:28px;
+}
+.hero h1 .accent{
+  background:linear-gradient(135deg,#0090c6 0%,#86ECFF 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  position:relative;
+}
+.hero p.lead{
+  font-size:clamp(16px,1.4vw,19px);
+  color:#b0b0b0;
+  max-width:560px;
+  margin-bottom:40px;
+}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+
+.hero-badges{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+  max-width:480px;
+}
+.badge{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px;
+  transition:all 0.3s ease;
+}
+.badge:hover{
+  border-color:rgba(0,144,198,0.4);
+  background:rgba(0,144,198,0.05);
+  transform:translateY(-2px);
+}
+.badge-icon{
+  width:36px;height:36px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(0,144,198,0.15),rgba(134,236,255,0.1));
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  color:#0090c6;
+}
+.badge-icon svg{width:18px;height:18px}
+.badge-text{font-size:13px;font-weight:500;line-height:1.3}
+.badge-text small{display:block;color:#888;font-weight:400;font-size:11px;margin-top:2px}
+
+/* Hero Visual (right side) */
+.hero-visual{
+  position:relative;
+  aspect-ratio:1/1.1;
+  max-width:480px;
+  justify-self:center;
+  width:100%;
+}
+.hero-card{
+  position:absolute;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,0.5);
+}
+.hero-card.main{
+  inset:10% 5% 15% 5%;
+  background:linear-gradient(135deg,#04133c,#00072b);
+  border:1px solid rgba(0,144,198,0.3);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.hero-card.main img{
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(1.1) contrast(1.05);
+}
+.hero-card.tag{
+  position:absolute;
+  background:#0090c6;color:#00072b;
+  padding:14px 18px;border-radius:14px;
+  font-weight:600;
+  font-size:13px;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 12px 30px rgba(0,144,198,0.4);
+  animation:floatUp 4s ease-in-out infinite;
+}
+.hero-card.tag.t1{top:5%;right:-5%}
+.hero-card.tag.t2{bottom:10%;left:-8%;background:#00072b;color:#fff;border:1px solid rgba(134,236,255,0.5);box-shadow:0 12px 30px rgba(134,236,255,0.2);animation-delay:1s}
+.hero-card.tag svg{width:18px;height:18px}
+@keyframes floatUp{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* ============ SECTION HEADERS ============ */
+.section-header{text-align:center;max-width:720px;margin:0 auto 80px}
+.section-header.left{text-align:left;margin-left:0}
+.section-header h2{
+  font-size:clamp(32px,4vw,52px);
+  margin-bottom:20px;
+}
+.section-header p{
+  color:#a0a0a0;font-size:17px;
+}
+.section-header h2 .accent{
+  background:linear-gradient(135deg,#0090c6 0%,#86ECFF 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* ============ ABOUT / WHY US ============ */
+.about{position:relative}
+.about-grid{
+  display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;
+}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px}}
+
+.about-img-wrap{
+  position:relative;
+  border-radius:24px;
+  overflow:hidden;
+  aspect-ratio:4/5;
+}
+.about-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 1.2s ease;
+}
+.about-img-wrap:hover img{transform:scale(1.05)}
+.about-img-wrap::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(10,10,10,0.6));
+}
+.about-quote{
+  position:absolute;bottom:24px;left:24px;right:24px;
+  padding:20px;
+  background:rgba(10,10,10,0.7);
+  backdrop-filter:blur(12px);
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.08);
+  z-index:1;
+}
+.about-quote p{font-size:14px;color:#e0e0e0;line-height:1.6}
+.about-quote .author{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:#0090c6;text-transform:uppercase;letter-spacing:0.15em;
+  margin-top:10px;display:block;
+}
+
+.feature-list{display:flex;flex-direction:column;gap:24px;margin-top:32px}
+.feature-item{
+  display:flex;gap:18px;
+  padding:20px;
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:16px;
+  background:rgba(255,255,255,0.02);
+  transition:all 0.3s ease;
+}
+.feature-item:hover{
+  border-color:rgba(0,144,198,0.3);
+  background:rgba(0,144,198,0.03);
+  transform:translateX(6px);
+}
+.feature-icon{
+  width:48px;height:48px;flex-shrink:0;
+  background:linear-gradient(135deg,#0090c6 0%,#86ECFF 100%);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  color:#00072b;
+  box-shadow:0 8px 20px rgba(0,144,198,0.25);
+}
+.feature-icon svg{width:24px;height:24px}
+.feature-text h4{font-size:17px;margin-bottom:6px}
+.feature-text p{color:#a0a0a0;font-size:14.5px}
+
+/* ============ STATS BAND ============ */
+.stats-band{
+  background:linear-gradient(135deg,#0090c6 0%,#86ECFF 100%);
+  color:#00072b;
+  padding:48px 0;
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  text-align:center;
+}
+@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.stat-num{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(36px,5vw,56px);
+  font-weight:700;
+  line-height:1;
+  margin-bottom:6px;
+}
+.stat-num .unit{font-size:0.5em;font-weight:500;opacity:0.7}
+.stat-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;font-weight:500;
+  text-transform:uppercase;letter-spacing:0.18em;
+}
+
+/* ============ SERVICES ============ */
+.services{position:relative}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.services-grid{grid-template-columns:1fr}}
+
+.service-card{
+  position:relative;
+  padding:32px 28px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:20px;
+  transition:all 0.4s ease;
+  overflow:hidden;
+}
+.service-card::before{
+  content:"";
+  position:absolute;top:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,#0090c6,transparent);
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.service-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(0,144,198,0.4);
+  background:linear-gradient(180deg,rgba(0,144,198,0.06),rgba(255,255,255,0.01));
+  box-shadow:0 20px 40px rgba(0,0,0,0.4),0 0 0 1px rgba(0,144,198,0.2);
+}
+.service-card:hover::before{opacity:1}
+.service-card:hover .service-icon{
+  transform:scale(1.1) rotate(-5deg);
+  background:linear-gradient(135deg,#0090c6,#86ECFF);
+  color:#00072b;
+}
+
+.service-icon{
+  width:56px;height:56px;
+  background:rgba(0,144,198,0.1);
+  border:1px solid rgba(0,144,198,0.25);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  color:#0090c6;
+  margin-bottom:24px;
+  transition:all 0.4s ease;
+}
+.service-icon svg{width:26px;height:26px}
+.service-card h3{font-size:19px;margin-bottom:10px}
+.service-card p{color:#9a9a9a;font-size:14.5px;line-height:1.6}
+.service-num{
+  position:absolute;top:24px;right:28px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;
+  color:rgba(255,255,255,0.2);
+}
+
+/* ============ GALLERY ============ */
+.gallery{position:relative}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:240px;
+  gap:16px;
+}
+@media(max-width:900px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
+}
+@media(max-width:600px){
+  .gallery-grid{grid-template-columns:1fr;grid-auto-rows:280px}
+}
+.gallery-item{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  background:#04133c;
+  cursor:pointer;
+  transition:transform 0.5s ease;
+}
+.gallery-item.large{grid-row:span 2}
+@media(max-width:600px){.gallery-item.large{grid-row:span 1}}
+.gallery-item img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.7s ease;
+}
+.gallery-item::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(10,10,10,0.85));
+  opacity:0.6;transition:opacity 0.3s;
+}
+.gallery-item:hover img{transform:scale(1.08)}
+.gallery-item:hover::after{opacity:0.9}
+.gallery-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:20px;z-index:1;
+  transform:translateY(10px);opacity:0.9;
+  transition:all 0.3s;
+}
+.gallery-item:hover .gallery-caption{transform:translateY(0);opacity:1}
+.gallery-caption h4{font-size:16px;margin-bottom:4px}
+.gallery-caption p{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;color:#0090c6;
+  text-transform:uppercase;letter-spacing:0.15em;
+}
+
+.gallery-note{
+  margin-top:32px;text-align:center;
+  font-size:13px;color:#666;
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* ============ PROCESS ============ */
+.process{
+  background:linear-gradient(180deg,#00072b,#031137 50%,#00072b);
+}
+.process-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  position:relative;
+}
+.process-grid::before{
+  content:"";position:absolute;
+  top:36px;left:5%;right:5%;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(0,144,198,0.3),rgba(134,236,255,0.3),rgba(0,144,198,0.3),transparent);
+  z-index:0;
+}
+@media(max-width:768px){
+  .process-grid{grid-template-columns:1fr;gap:32px}
+  .process-grid::before{display:none}
+}
+.process-step{position:relative;text-align:center;z-index:1}
+.process-num{
+  width:72px;height:72px;
+  background:#00072b;
+  border:2px solid rgba(0,144,198,0.4);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:24px;font-weight:700;
+  color:#0090c6;
+  margin:0 auto 24px;
+  transition:all 0.3s ease;
+}
+.process-step:hover .process-num{
+  background:#0090c6;color:#00072b;
+  transform:scale(1.05);
+  box-shadow:0 0 30px rgba(0,144,198,0.5);
+}
+.process-step h4{font-size:18px;margin-bottom:10px}
+.process-step p{color:#999;font-size:14px;max-width:240px;margin:0 auto}
+
+/* ============ CTA BAND ============ */
+.cta-band{
+  background:
+    radial-gradient(ellipse at 30% 50%,rgba(0,144,198,0.12),transparent 60%),
+    radial-gradient(ellipse at 70% 50%,rgba(134,236,255,0.08),transparent 60%),
+    #00072b;
+  padding:100px 0;
+  position:relative;
+  border-top:1px solid rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.cta-content{
+  text-align:center;max-width:760px;margin:0 auto;
+}
+.cta-content h2{
+  font-size:clamp(32px,4.5vw,56px);
+  margin-bottom:20px;
+}
+.cta-content p{
+  font-size:18px;color:#b0b0b0;
+  margin-bottom:36px;
+}
+.cta-content .hero-cta{justify-content:center}
+
+/* ============ CONTACT ============ */
+.contact-grid{
+  display:grid;grid-template-columns:1.15fr 1fr;gap:48px;
+}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:32px}}
+
+.contact-info{
+  padding:40px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:24px;
+}
+.contact-info h3{font-size:24px;margin-bottom:24px}
+.contact-list{display:flex;flex-direction:column;gap:20px;margin-bottom:32px}
+.contact-row{display:flex;align-items:flex-start;gap:16px}
+.contact-row-icon{
+  width:42px;height:42px;flex-shrink:0;
+  background:rgba(0,144,198,0.1);
+  border:1px solid rgba(0,144,198,0.25);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  color:#0090c6;
+}
+.contact-row-icon svg{width:20px;height:20px}
+.contact-row-text{flex:1}
+.contact-row-text small{
+  display:block;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;color:#888;
+  text-transform:uppercase;letter-spacing:0.15em;
+  margin-bottom:4px;
+}
+.contact-row-text a,.contact-row-text span{
+  font-size:16px;font-weight:500;color:#fff;
+  transition:color 0.2s;
+  white-space:nowrap;
+}
+.contact-row-text .wrap{white-space:normal}
+.contact-row-text a:hover{color:#0090c6}
+
+.map-embed{
+  border-radius:16px;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+  height:240px;
+  filter:grayscale(0.4) contrast(1.1) brightness(0.85);
+  transition:filter 0.3s;
+}
+.map-embed:hover{filter:grayscale(0) contrast(1) brightness(1)}
+.map-embed iframe{width:100%;height:100%;border:0;display:block}
+
+/* Form */
+.contact-form{
+  padding:40px;
+  background:linear-gradient(180deg,rgba(0,144,198,0.04),rgba(255,255,255,0.01));
+  border:1px solid rgba(0,144,198,0.15);
+  border-radius:24px;
+}
+.contact-form h3{font-size:24px;margin-bottom:8px}
+.contact-form .subtitle{color:#a0a0a0;font-size:14px;margin-bottom:28px}
+.form-row{margin-bottom:18px}
+.form-row.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:480px){.form-row.split{grid-template-columns:1fr}}
+.form-row label{
+  display:block;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;color:#888;
+  text-transform:uppercase;letter-spacing:0.15em;
+  margin-bottom:8px;
+}
+.form-row input,
+.form-row select,
+.form-row textarea{
+  width:100%;
+  padding:14px 16px;
+  background:rgba(0,0,0,0.4);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;
+  color:#fff;font-family:inherit;font-size:14.5px;
+  transition:all 0.2s;
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus{
+  outline:none;border-color:#0090c6;
+  background:rgba(0,0,0,0.6);
+  box-shadow:0 0 0 3px rgba(0,144,198,0.15);
+}
+.form-row textarea{resize:vertical;min-height:110px}
+.form-row select{cursor:pointer}
+.form-row select option{background:#00072b}
+
+.btn-submit{
+  width:100%;
+  padding:16px;
+  background:linear-gradient(135deg,#0090c6,#86ECFF);
+  color:#00072b;
+  font-weight:700;font-size:15px;
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:all 0.3s ease;
+  box-shadow:0 8px 25px rgba(0,144,198,0.3);
+}
+.btn-submit:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 35px rgba(0,144,198,0.45);
+}
+.btn-submit svg{width:16px;height:16px}
+
+.form-success{
+  display:none;
+  margin-top:20px;padding:16px;
+  background:rgba(134,236,255,0.08);
+  border:1px solid rgba(134,236,255,0.3);
+  border-radius:10px;
+  color:#86ECFF;font-size:14px;
+}
+.form-success.show{display:block}
+
+/* ============ FOOTER ============ */
+.footer{
+  background:#020726;
+  padding:60px 0 30px;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;
+  margin-bottom:48px;
+}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand p{color:#888;font-size:14px;margin-top:18px;max-width:320px;line-height:1.7}
+.footer h5{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;font-weight:500;
+  text-transform:uppercase;letter-spacing:0.18em;
+  color:#0090c6;
+  margin-bottom:18px;
+}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer ul a{color:#999;font-size:14px;transition:color 0.2s}
+.footer ul a:hover{color:#0090c6}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  font-size:13px;color:#666;
+}
+.footer-bottom .mono{font-family:'JetBrains Mono',monospace;font-size:11px}
+
+/* ============ REVEAL ANIMATIONS ============ */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.from-left{transform:translateX(-40px)}
+.reveal.from-left.visible{transform:translateX(0)}
+.reveal.from-right{transform:translateX(40px)}
+.reveal.from-right.visible{transform:translateX(0)}
+.reveal.scale{transform:scale(0.94)}
+.reveal.scale.visible{transform:scale(1)}
+.reveal[data-delay="1"]{transition-delay:0.1s}
+.reveal[data-delay="2"]{transition-delay:0.2s}
+.reveal[data-delay="3"]{transition-delay:0.3s}
+.reveal[data-delay="4"]{transition-delay:0.4s}
+.reveal[data-delay="5"]{transition-delay:0.5s}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-bolt">
+        <img src="assets/jpower-square.png" alt="JPower Electric" />
+      </span>
+      <span class="logo-text">Power Electric<span> Corp</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about"><span class="lang-en">About</span><span class="lang-es">Nosotros</span></a>
+      <a href="#services"><span class="lang-en">Services</span><span class="lang-es">Servicios</span></a>
+      <a href="#gallery"><span class="lang-en">Work</span><span class="lang-es">Trabajos</span></a>
+      <a href="#process"><span class="lang-en">Process</span><span class="lang-es">Proceso</span></a>
+      <a href="#contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+    </div>
+    <div class="nav-actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="active" data-set-lang="en">EN</button>
+        <button data-set-lang="es">ES</button>
+      </div>
+      <a href="tel:+13055251268" class="btn-primary nav-cta-desktop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+        <span class="lang-en">Call Now</span><span class="lang-es">Llamar</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-bolts">
+    <svg class="bolt-decor b1" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+    <svg class="bolt-decor b2" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+    <svg class="bolt-decor b3" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+  </div>
+  <div class="container hero-content">
+    <div>
+      <div class="hero-status reveal">
+        <span class="dot"></span>
+        <span class="lang-en">24/7 Emergency Response · Available Now</span>
+        <span class="lang-es">Emergencias 24/7 · Disponibles ahora</span>
+      </div>
+      <h1 class="reveal" data-delay="1">
+        <span class="lang-en">Lighting Up Florida,<br><span class="accent">One Home</span> at a Time.</span>
+        <span class="lang-es">Iluminando Florida,<br><span class="accent">Un Hogar</span> a la Vez.</span>
+      </h1>
+      <p class="lead reveal" data-delay="2">
+        <span class="lang-en">Florida State Certified electricians delivering residential, commercial, and industrial electrical solutions across Florida — with a 1-year warranty and a punctuality guarantee.</span>
+        <span class="lang-es">Electricistas Certificados por el Estado de Florida con soluciones eléctricas residenciales, comerciales e industriales en Florida — con garantía de 1 año y puntualidad asegurada.</span>
+      </p>
+      <div class="hero-cta reveal" data-delay="3">
+        <a href="#contact" class="btn-primary">
+          <span class="lang-en">Get Free Estimate</span><span class="lang-es">Presupuesto Gratis</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+13055251268" class="btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+          (305) 525-1268
+        </a>
+      </div>
+
+      <div class="hero-badges reveal" data-delay="4">
+        <div class="badge">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="badge-text">
+            <span class="lang-en">FL State Certified</span><span class="lang-es">Certificado FL</span>
+            <small><span class="lang-en">Licensed & insured</span><span class="lang-es">Licencia y seguro</span></small>
+          </div>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </div>
+          <div class="badge-text">
+            <span class="lang-en">1-Year Warranty</span><span class="lang-es">Garantía 1 Año</span>
+            <small><span class="lang-en">On all services</span><span class="lang-es">En todo servicio</span></small>
+          </div>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="badge-text">
+            <span class="lang-en">5 Min Early</span><span class="lang-es">5 Min Antes</span>
+            <small><span class="lang-en">Punctuality guarantee</span><span class="lang-es">Garantía puntualidad</span></small>
+          </div>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+          </div>
+          <div class="badge-text">
+            <span class="lang-en">24/7 Emergency</span><span class="lang-es">Emergencias 24/7</span>
+            <small><span class="lang-en">Always on call</span><span class="lang-es">Siempre disponibles</span></small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal from-right" data-delay="2">
+      <div class="hero-card main">
+        <img src="assets/bombillo.jpg" alt="JPower Electric work" loading="lazy" />
+      </div>
+      <div class="hero-card tag t1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+        <span class="lang-en">Powered Up</span><span class="lang-es">Energizado</span>
+      </div>
+      <div class="hero-card tag t2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="color:#86ECFF"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        <span class="lang-en">Code Compliant</span><span class="lang-es">Cumple Normativa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAND ============ -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal scale">
+        <div class="stat-num"><span class="counter" data-target="24">0</span><span class="unit">/7</span></div>
+        <div class="stat-label"><span class="lang-en">Emergency Response</span><span class="lang-es">Emergencias</span></div>
+      </div>
+      <div class="reveal scale" data-delay="1">
+        <div class="stat-num"><span class="counter" data-target="1">0</span><span class="unit"> YR</span></div>
+        <div class="stat-label"><span class="lang-en">Service Warranty</span><span class="lang-es">Garantía Servicio</span></div>
+      </div>
+      <div class="reveal scale" data-delay="2">
+        <div class="stat-num"><span class="counter" data-target="100">0</span><span class="unit">%</span></div>
+        <div class="stat-label"><span class="lang-en">Code Compliant</span><span class="lang-es">Cumple Normativa</span></div>
+      </div>
+      <div class="reveal scale" data-delay="3">
+        <div class="stat-num"><span class="counter" data-target="5">0</span><span class="unit"> MIN</span></div>
+        <div class="stat-label"><span class="lang-en">Early Arrival</span><span class="lang-es">Antes de Hora</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal from-left">
+        <img src="assets/03.png" alt="JPower Electric team at work" loading="lazy" />
+        <div class="about-quote">
+          <p>
+            <span class="lang-en">"Allow us the opportunity to serve you and join our community of satisfied clients."</span>
+            <span class="lang-es">"Permítenos servirte y únete a nuestra comunidad de clientes satisfechos."</span>
+          </p>
+          <span class="author">— JPower Electric · Florida</span>
+        </div>
+      </div>
+      <div class="reveal from-right">
+        <span class="eyebrow"><span class="lang-en">Why JPower</span><span class="lang-es">Por Qué JPower</span></span>
+        <h2>
+          <span class="lang-en">Trusted electricians, <span class="accent">honest work</span>, lasting results.</span>
+          <span class="lang-es">Electricistas de confianza, <span class="accent">trabajo honesto</span>, resultados que duran.</span>
+        </h2>
+        <p style="color:#a0a0a0;font-size:16px;margin-top:16px">
+          <span class="lang-en">From small home repairs to full commercial installations, we deliver electrical work that meets every code and exceeds every expectation. Our team commits to safety, speed, and craftsmanship — and we stand behind every job we complete.</span>
+          <span class="lang-es">Desde reparaciones del hogar hasta instalaciones comerciales completas, entregamos trabajo eléctrico que cumple toda la normativa y supera toda expectativa. Nuestro equipo se compromete con la seguridad, rapidez y calidad — y respaldamos cada trabajo que realizamos.</span>
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="feature-text">
+              <h4><span class="lang-en">Licensed & State Certified</span><span class="lang-es">Licenciado y Certificado</span></h4>
+              <p><span class="lang-en">Full Florida State certification — every job adheres to electrical codes and industry safety standards.</span><span class="lang-es">Certificación completa del Estado de Florida — cada trabajo cumple códigos eléctricos y estándares de seguridad.</span></p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="feature-text">
+              <h4><span class="lang-en">Punctuality You Can Set a Watch By</span><span class="lang-es">Puntualidad de Reloj</span></h4>
+              <p><span class="lang-en">We arrive 5 minutes before scheduled time — every appointment, every time.</span><span class="lang-es">Llegamos 5 minutos antes de la hora acordada — en cada cita, sin excepción.</span></p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </div>
+            <div class="feature-text">
+              <h4><span class="lang-en">1-Year Warranty on All Work</span><span class="lang-es">Garantía 1 Año en Todo</span></h4>
+              <p><span class="lang-en">Full one-year warranty on every service — because quality should never be a gamble.</span><span class="lang-es">Garantía completa de un año en cada servicio — porque la calidad nunca debe ser una apuesta.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow"><span class="lang-en">What We Do</span><span class="lang-es">Lo Que Hacemos</span></span>
+      <h2>
+        <span class="lang-en">Complete electrical services, <span class="accent">end to end.</span></span>
+        <span class="lang-es">Servicios eléctricos completos, <span class="accent">de principio a fin.</span></span>
+      </h2>
+      <p>
+        <span class="lang-en">Residential, commercial, and industrial — we handle the spark from estimate to final inspection.</span>
+        <span class="lang-es">Residencial, comercial e industrial — manejamos cada chispa desde el presupuesto hasta la inspección final.</span>
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal" data-delay="1">
+        <span class="service-num">/01</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+        </div>
+        <h3><span class="lang-en">Emergency Response</span><span class="lang-es">Respuesta de Emergencia</span></h3>
+        <p><span class="lang-en">24/7 rapid response for power outages, electrical hazards, and urgent failures.</span><span class="lang-es">Respuesta rápida 24/7 ante apagones, riesgos eléctricos y fallos urgentes.</span></p>
+      </div>
+      <div class="service-card reveal" data-delay="2">
+        <span class="service-num">/02</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+        </div>
+        <h3><span class="lang-en">Panel Upgrades</span><span class="lang-es">Actualización de Paneles</span></h3>
+        <p><span class="lang-en">Modernize your electrical panel for safety, capacity, and full code compliance.</span><span class="lang-es">Moderniza tu panel eléctrico con seguridad, capacidad y total cumplimiento normativo.</span></p>
+      </div>
+      <div class="service-card reveal" data-delay="3">
+        <span class="service-num">/03</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6m0 8v6M5 12H2m20 0h-3M6.34 6.34l-1.42-1.42m14.14 14.14l-1.42-1.42M6.34 17.66l-1.42 1.42M19.06 4.92l-1.42 1.42"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h3><span class="lang-en">Lighting Installation</span><span class="lang-es">Instalación de Iluminación</span></h3>
+        <p><span class="lang-en">Indoor and outdoor lighting — LEDs, fixtures, recessed, accent, and landscape lighting.</span><span class="lang-es">Iluminación interior y exterior — LEDs, lámparas, empotrada, decorativa y de jardín.</span></p>
+      </div>
+      <div class="service-card reveal" data-delay="1">
+        <span class="service-num">/04</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+        </div>
+        <h3><span class="lang-en">EV Charger Stations</span><span class="lang-es">Cargadores EV</span></h3>
+        <p><span class="lang-en">Tesla and universal EV charger installation for homes and commercial properties.</span><span class="lang-es">Instalación de cargadores Tesla y universales para casas y propiedades comerciales.</span></p>
+      </div>
+      <div class="service-card reveal" data-delay="2">
+        <span class="service-num">/05</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3><span class="lang-en">Generator Service</span><span class="lang-es">Servicio de Generadores</span></h3>
+        <p><span class="lang-en">Backup generator installation, maintenance, and emergency hurricane prep.</span><span class="lang-es">Instalación, mantenimiento y preparación de generadores de respaldo para huracanes.</span></p>
+      </div>
+      <div class="service-card reveal" data-delay="3">
+        <span class="service-num">/06</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3><span class="lang-en">Wiring & Repairs</span><span class="lang-es">Cableado y Reparaciones</span></h3>
+        <p><span class="lang-en">New wiring installations and expert troubleshooting of any electrical fault.</span><span class="lang-es">Instalación de cableado nuevo y diagnóstico experto de cualquier fallo eléctrico.</span></p>
+      </div>
+      <div class="service-card reveal" data-delay="1">
+        <span class="service-num">/07</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.5" fill="currentColor"/><circle cx="15" cy="10" r="1.5" fill="currentColor"/><path d="M9 16h6"/></svg>
+        </div>
+        <h3><span class="lang-en">Outlets & Switches</span><span class="lang-es">Tomas e Interruptores</span></h3>
+        <p><span class="lang-en">New outlets, USB outlets, dimmer switches, smart switches, and full repairs.</span><span class="lang-es">Tomas nuevas, USB, atenuadores, interruptores inteligentes y reparaciones completas.</span></p>
+      </div>
+      <div class="service-card reveal" data-delay="2">
+        <span class="service-num">/08</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3><span class="lang-en">Construction & Remodel</span><span class="lang-es">Obra Nueva y Reformas</span></h3>
+        <p><span class="lang-en">New construction wiring and full electrical work for kitchen, bath, and home remodels.</span><span class="lang-es">Cableado de obra nueva y trabajo eléctrico completo en reformas de cocina, baño y hogar.</span></p>
+      </div>
+      <div class="service-card reveal" data-delay="3">
+        <span class="service-num">/09</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 00-3 3v6.5a3 3 0 005 2.236A3 3 0 0017 11.5V5a3 3 0 00-5 0z"/><path d="M5 21l7-7 7 7"/></svg>
+        </div>
+        <h3><span class="lang-en">Smoke Detectors & Fans</span><span class="lang-es">Detectores y Ventiladores</span></h3>
+        <p><span class="lang-en">Smoke detector installation and ceiling fan setup with full safety compliance.</span><span class="lang-es">Instalación de detectores de humo y ventiladores de techo con seguridad total.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow"><span class="lang-en">Real Work</span><span class="lang-es">Trabajos Reales</span></span>
+      <h2>
+        <span class="lang-en">Recent <span class="accent">projects</span> across Florida.</span>
+        <span class="lang-es">Proyectos <span class="accent">recientes</span> por todo Florida.</span>
+      </h2>
+      <p>
+        <span class="lang-en">Every job is a chance to do quality work that lasts. Here's a look at some recent installations.</span>
+        <span class="lang-es">Cada trabajo es una oportunidad de hacer calidad que dura. Mira algunas instalaciones recientes.</span>
+      </p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item large reveal scale">
+        <img src="assets/jesus.webp" alt="Power Electric Corp emergency electrical response" loading="lazy" />
+        <div class="gallery-caption" style="padding-bottom:24px">
+          <p style="margin-bottom:8px"><span class="lang-en">// DISCOVER MORE</span><span class="lang-es">// DESCUBRE MÁS</span></p>
+          <h4 style="font-size:22px;margin-bottom:10px"><span class="lang-en">Emergency</span><span class="lang-es">Emergencia</span></h4>
+          <p style="font-family:'Inter',sans-serif;color:#e0e0e0;font-size:13.5px;line-height:1.55;text-transform:none;letter-spacing:0;font-weight:400">
+            <span class="lang-en">Rapid response for urgent electrical issues, ensuring safety and immediate solutions.</span>
+            <span class="lang-es">Respuesta rápida ante incidencias eléctricas urgentes, garantizando seguridad y soluciones inmediatas.</span>
+          </p>
+        </div>
+      </div>
+      <div class="gallery-item reveal scale" data-delay="1">
+        <img src="assets/after.jpg" alt="Electric panel after repair" loading="lazy" />
+        <div class="gallery-caption">
+          <h4><span class="lang-en">Electric Panels Fixed</span><span class="lang-es">Paneles Eléctricos Reparados</span></h4>
+          <p>// AFTER · RESIDENTIAL</p>
+        </div>
+      </div>
+      <div class="gallery-item reveal scale" data-delay="1">
+        <img src="assets/teslas.png" alt="Tesla EV charger installation" loading="lazy" />
+        <div class="gallery-caption">
+          <h4><span class="lang-en">Tesla Charger</span><span class="lang-es">Cargador Tesla</span></h4>
+          <p>// EV · RESIDENTIAL</p>
+        </div>
+      </div>
+      <div class="gallery-item reveal scale" data-delay="2">
+        <img src="assets/leds.png" alt="LED lighting installation" loading="lazy" />
+        <div class="gallery-caption">
+          <h4><span class="lang-en">LED Lighting</span><span class="lang-es">Iluminación LED</span></h4>
+          <p>// COMMERCIAL · INTERIOR</p>
+        </div>
+      </div>
+      <div class="gallery-item reveal scale" data-delay="1">
+        <img src="assets/outlets.png" alt="Outlets and switches" loading="lazy" />
+        <div class="gallery-caption">
+          <h4><span class="lang-en">Outlets & Switches</span><span class="lang-es">Tomas e Interruptores</span></h4>
+          <p>// RESIDENTIAL · UPGRADE</p>
+        </div>
+      </div>
+      <div class="gallery-item reveal scale" data-delay="2">
+        <img src="assets/lamps.png" alt="Lamp installation" loading="lazy" />
+        <div class="gallery-caption">
+          <h4><span class="lang-en">Designer Lamps</span><span class="lang-es">Lámparas de Diseño</span></h4>
+          <p>// INTERIOR · DECOR</p>
+        </div>
+      </div>
+      <div class="gallery-item large reveal scale" data-delay="3">
+        <img src="assets/jacuzzi.png" alt="Jacuzzi electrical setup" loading="lazy" />
+        <div class="gallery-caption">
+          <h4><span class="lang-en">Jacuzzi Wiring</span><span class="lang-es">Cableado Jacuzzi</span></h4>
+          <p>// OUTDOOR · POOL DECK</p>
+        </div>
+      </div>
+    </div>
+    <p class="gallery-note">
+      // <span class="lang-en">PHOTOS FROM REAL JPOWER ELECTRIC INSTALLATIONS · FLORIDA</span><span class="lang-es">FOTOS DE INSTALACIONES REALES DE JPOWER ELECTRIC · FLORIDA</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow"><span class="lang-en">How It Works</span><span class="lang-es">Cómo Funciona</span></span>
+      <h2>
+        <span class="lang-en">From your call to <span class="accent">job done</span> in 4 steps.</span>
+        <span class="lang-es">De la llamada al <span class="accent">trabajo terminado</span> en 4 pasos.</span>
+      </h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal" data-delay="1">
+        <div class="process-num">01</div>
+        <h4><span class="lang-en">Get in Touch</span><span class="lang-es">Contáctanos</span></h4>
+        <p><span class="lang-en">Call, email, or fill the form. We respond fast.</span><span class="lang-es">Llama, escribe, o completa el formulario. Respondemos rápido.</span></p>
+      </div>
+      <div class="process-step reveal" data-delay="2">
+        <div class="process-num">02</div>
+        <h4><span class="lang-en">Free Estimate</span><span class="lang-es">Presupuesto Gratis</span></h4>
+        <p><span class="lang-en">Clear, written pricing with no hidden surprises.</span><span class="lang-es">Precio claro y por escrito, sin sorpresas ocultas.</span></p>
+      </div>
+      <div class="process-step reveal" data-delay="3">
+        <div class="process-num">03</div>
+        <h4><span class="lang-en">We Get to Work</span><span class="lang-es">Manos a la Obra</span></h4>
+        <p><span class="lang-en">5 minutes early. Code-compliant. Cleanly executed.</span><span class="lang-es">5 minutos antes. Cumple normativa. Trabajo limpio.</span></p>
+      </div>
+      <div class="process-step reveal" data-delay="4">
+        <div class="process-num">04</div>
+        <h4><span class="lang-en">1-Year Warranty</span><span class="lang-es">Garantía 1 Año</span></h4>
+        <p><span class="lang-en">Job's not done until you're 100% satisfied.</span><span class="lang-es">El trabajo no termina hasta que estés 100% satisfecho.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-content reveal scale">
+      <h2>
+        <span class="lang-en">Ready to power up your <span style="color:#86ECFF">project?</span></span>
+        <span class="lang-es">¿Listo para energizar tu <span style="color:#86ECFF">proyecto?</span></span>
+      </h2>
+      <p>
+        <span class="lang-en">Free estimates, fast response, and certified work. Let's talk about what you need.</span>
+        <span class="lang-es">Presupuesto gratis, respuesta rápida, y trabajo certificado. Hablemos de lo que necesitas.</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">
+          <span class="lang-en">Request Estimate</span><span class="lang-es">Pedir Presupuesto</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+13055251268" class="btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+          <span class="lang-en">Call Now</span><span class="lang-es">Llamar Ahora</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow"><span class="lang-en">Get In Touch</span><span class="lang-es">Contáctanos</span></span>
+      <h2>
+        <span class="lang-en">Tell us about your <span class="accent">project.</span></span>
+        <span class="lang-es">Cuéntanos sobre tu <span class="accent">proyecto.</span></span>
+      </h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal from-left">
+        <h3><span class="lang-en">Contact Information</span><span class="lang-es">Información de Contacto</span></h3>
+        <div class="contact-list">
+          <div class="contact-row">
+            <div class="contact-row-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="contact-row-text">
+              <small><span class="lang-en">Phone</span><span class="lang-es">Teléfono</span></small>
+              <a href="tel:+13055251268">(305) 525-1268</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+            </div>
+            <div class="contact-row-text">
+              <small><span class="lang-en">Email</span><span class="lang-es">Correo</span></small>
+              <a href="mailto:jpowerelc@gmail.com">jpowerelc@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-row-text">
+              <small><span class="lang-en">Service Area</span><span class="lang-es">Zona de Servicio</span></small>
+              <span>Florida, USA</span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-row-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="contact-row-text">
+              <small><span class="lang-en">Hours</span><span class="lang-es">Horario</span></small>
+              <span class="wrap"><span class="lang-en">Mon–Fri 8:30am – 6:30pm · 24/7 Online</span><span class="lang-es">Lun–Vie 8:30 – 18:30 · 24/7 Online</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe loading="lazy" src="https://www.google.com/maps?q=Florida,USA&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <form class="contact-form reveal from-right" id="contactForm" onsubmit="return submitForm(event)">
+        <h3><span class="lang-en">Request Your Free Estimate</span><span class="lang-es">Solicita Tu Presupuesto Gratis</span></h3>
+        <p class="subtitle"><span class="lang-en">We'll get back to you within 24 hours.</span><span class="lang-es">Te respondemos en menos de 24 horas.</span></p>
+        <div class="form-row split">
+          <div>
+            <label><span class="lang-en">Your Name</span><span class="lang-es">Tu Nombre</span></label>
+            <input type="text" name="name" required />
+          </div>
+          <div>
+            <label><span class="lang-en">Phone</span><span class="lang-es">Teléfono</span></label>
+            <input type="tel" name="phone" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" name="email" required />
+        </div>
+        <div class="form-row">
+          <label><span class="lang-en">Service Needed</span><span class="lang-es">Servicio Necesario</span></label>
+          <select name="service" required>
+            <option value=""><span class="lang-en">Select a service…</span></option>
+            <option value="emergency"><span class="lang-en">Emergency / Urgent</span></option>
+            <option value="panel">Panel Upgrade</option>
+            <option value="lighting">Lighting Installation</option>
+            <option value="ev">EV Charger</option>
+            <option value="generator">Generator Service</option>
+            <option value="wiring">Wiring & Repair</option>
+            <option value="outlets">Outlets & Switches</option>
+            <option value="construction">Construction / Remodel</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label><span class="lang-en">Tell us about your project</span><span class="lang-es">Cuéntanos sobre tu proyecto</span></label>
+          <textarea name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+          <span class="lang-en">Send Request</span><span class="lang-es">Enviar Solicitud</span>
+        </button>
+        <div class="form-success" id="formSuccess">
+          <span class="lang-en">Thanks! We received your message and will contact you within 24 hours.</span>
+          <span class="lang-es">¡Gracias! Recibimos tu mensaje y te contactaremos en menos de 24 horas.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <span class="logo-bolt">
+            <img src="assets/jpower-square.png" alt="JPower Electric" />
+          </span>
+          <span class="logo-text">Power Electric<span> Corp</span></span>
+        </a>
+        <p>
+          <span class="lang-en">Florida State Certified electricians lighting up Florida homes and businesses — one job at a time, with quality you can count on.</span>
+          <span class="lang-es">Electricistas Certificados de Florida iluminando hogares y negocios de Florida — un trabajo a la vez, con calidad en la que puedes confiar.</span>
+        </p>
+      </div>
+      <div>
+        <h5><span class="lang-en">Services</span><span class="lang-es">Servicios</span></h5>
+        <ul>
+          <li><a href="#services"><span class="lang-en">Emergency Response</span><span class="lang-es">Emergencias</span></a></li>
+          <li><a href="#services"><span class="lang-en">Panel Upgrades</span><span class="lang-es">Paneles</span></a></li>
+          <li><a href="#services"><span class="lang-en">EV Chargers</span><span class="lang-es">Cargadores EV</span></a></li>
+          <li><a href="#services"><span class="lang-en">Lighting</span><span class="lang-es">Iluminación</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="lang-en">Company</span><span class="lang-es">Empresa</span></h5>
+        <ul>
+          <li><a href="#about"><span class="lang-en">About</span><span class="lang-es">Nosotros</span></a></li>
+          <li><a href="#gallery"><span class="lang-en">Our Work</span><span class="lang-es">Trabajos</span></a></li>
+          <li><a href="#process"><span class="lang-en">Process</span><span class="lang-es">Proceso</span></a></li>
+          <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h5>
+        <ul>
+          <li><a href="tel:+13055251268">(305) 525-1268</a></li>
+          <li><a href="mailto:jpowerelc@gmail.com">jpowerelc@gmail.com</a></li>
+          <li>Florida, USA</li>
+          <li><span class="lang-en">Mon–Fri 8:30 – 18:30</span><span class="lang-es">Lun–Vie 8:30 – 18:30</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="mono">© <span id="year">2026</span> JPOWER ELECTRIC · FLORIDA · ALL RIGHTS RESERVED</span>
+      <span class="mono"><span class="lang-en">FL STATE CERTIFIED · LICENSED & INSURED</span><span class="lang-es">CERTIFICADO ESTADO FL · LICENCIA Y SEGURO</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============ SCROLL: NAV BACKGROUND ============
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if(y > 30) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+  lastScroll = y;
+}, {passive:true});
+
+// ============ MOBILE MENU ============
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    menuToggle.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
+
+// ============ LANGUAGE TOGGLE ============
+document.querySelectorAll('[data-set-lang]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.setLang;
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-set-lang]').forEach(b => {
+      b.classList.toggle('active', b.dataset.setLang === lang);
+    });
+    try{ localStorage.setItem('jpower-lang', lang); }catch(e){}
+  });
+});
+// Load saved language
+try{
+  const saved = localStorage.getItem('jpower-lang');
+  if(saved){
+    document.documentElement.setAttribute('data-lang', saved);
+    document.documentElement.setAttribute('lang', saved);
+    document.querySelectorAll('[data-set-lang]').forEach(b => {
+      b.classList.toggle('active', b.dataset.setLang === saved);
+    });
+  }
+}catch(e){}
+
+// ============ INTERSECTION OBSERVER REVEAL ============
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      // Trigger counters
+      if(entry.target.querySelector && entry.target.querySelector('.counter')){
+        animateCounters(entry.target);
+      }
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12, rootMargin:'0px 0px -50px 0px'});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ============ COUNTERS ============
+function animateCounters(scope){
+  scope.querySelectorAll('.counter').forEach(el => {
+    if(el.dataset.done) return;
+    el.dataset.done = '1';
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now){
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.floor(target * eased);
+      if(t < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(tick);
+  });
+}
+
+// ============ HERO PARALLAX ============
+const heroBolts = document.querySelectorAll('.bolt-decor');
+const heroVisual = document.querySelector('.hero-visual');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if(y < window.innerHeight){
+    heroBolts.forEach((b, i) => {
+      b.style.transform = `translateY(${y * (0.15 + i * 0.05)}px) rotate(${y * 0.03}deg)`;
+    });
+    if(heroVisual) heroVisual.style.transform = `translateY(${y * -0.06}px)`;
+  }
+}, {passive:true});
+
+// ============ FORM SUBMIT (mailto fallback) ============
+function submitForm(e){
+  e.preventDefault();
+  const f = e.target;
+  const data = new FormData(f);
+  const subject = encodeURIComponent('New Estimate Request — ' + (data.get('service') || ''));
+  const body = encodeURIComponent(
+    'Name: ' + data.get('name') + '\n' +
+    'Phone: ' + data.get('phone') + '\n' +
+    'Email: ' + data.get('email') + '\n' +
+    'Service: ' + data.get('service') + '\n\n' +
+    'Message:\n' + data.get('message')
+  );
+  window.location.href = 'mailto:jpowerelc@gmail.com?subject=' + subject + '&body=' + body;
+  document.getElementById('formSuccess').classList.add('show');
+  return false;
+}
+
+// ============ DYNAMIC YEAR ============
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
